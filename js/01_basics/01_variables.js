@@ -14,5 +14,4 @@ console.table([accountId, accountEmail, accountPassword, accountCity, accountSta
 
 /*  
 do not use var cause of issues of block space.
-
  */
