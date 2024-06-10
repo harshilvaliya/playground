@@ -22,3 +22,36 @@ console.log(typeof score3InNumber);
 true => 1 ; false => 0
 "" => false ; "abc" => true
 */
+
+// ------------- Operation ------------- //
+console.log("----------------------------------------------------------------");
+
+let value = 6;
+let negValue = -value;
+console.log(negValue);
+console.log(2 + 3); //basic arithmetic operations
+
+console.log("----------------------------------------------------------------");
+
+let str1 = "harshil";
+let str2 = "valiya";
+
+let str3 = str1 + " " + str2;
+console.log(str3);
+
+console.log("----------------------------------------------------------------");
+
+console.log(1 + 3);
+console.log(1 + "3");
+console.log("1" + 3);
+console.log(1 + 3 + 2);
+console.log("1" + 3 + 2);
+console.log(1 + 3 + "2"); //not appropriate way to write the code
+
+//following way is to write the code
+console.log((1 + 3 + 2) * (1 % 3));
+
+console.log("----------------------------------------------------------------");
+
+console.log(+true);
+console.log(+"");
