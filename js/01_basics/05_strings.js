@@ -2,8 +2,8 @@
 const name = "Batman";
 const age = 30;
 
-console.log(name + " is " + age + " years old."); // outdated
-console.log(`${name} is ${age} years old.`); // modern way to write
+console.log(name + " is " + age + " years old."); // outdated [String concatenation]
+console.log(`${name} is ${age} years old.`); // modern way to write [String interpolation]
 
 console.log("----------------------------------------------------------------");
 
