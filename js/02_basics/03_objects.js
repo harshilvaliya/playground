@@ -1,5 +1,3 @@
-// singleton
-
 const symbolOne = Symbol("hero1");
 
 // object literals
