@@ -68,3 +68,28 @@ console.log("----------------------------------------------------------------");
 console.log(Object.keys(users));
 console.log(Object.values(users));
 console.log(Object.entries(users));
+
+console.log("----------------------------------------------------------------");
+//object destructuring
+
+const movie = {
+  title: "Inception",
+  year: 2010,
+  rating: 4.5,
+  director: "Nolan",
+};
+
+const { title, rating: star } = movie;
+console.log(title);
+console.log(star);
+
+console.log("----------------------------------------------------------------");
+//JSON structure
+/*
+{
+  "title": "Inception";
+  "year": 2010;
+  "rating": 4.5;
+  "director": "Nolan";
+};
+*/
