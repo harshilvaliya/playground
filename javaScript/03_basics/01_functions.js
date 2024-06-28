@@ -33,26 +33,26 @@ console.log("Result:", result);
 
 console.log("----------------------------------------------------------------");
 
-function addTwoNumber(number1, number2) {
+function addTwoNumb(number1, number2) {
   return number1 + number2;
 }
 
-const result2 = addTwoNumber(3, 3);
+const result2 = addTwoNumb(3, 3);
 console.log("Result2:", result2);
 
 console.log("----------------------------------------------------------------");
 
-function loginUserGreetings(userName) {
+function loginUserGreetings1(userName) {
   return `Welcome to our site dear ${userName} !`;
 }
 
-console.log(loginUserGreetings("Harshil"));
-console.log(loginUserGreetings(""));
-console.log(loginUserGreetings());
+console.log(loginUserGreetings1("Harshil"));
+console.log(loginUserGreetings1(""));
+console.log(loginUserGreetings1());
 
 console.log("----------------------------------------------------------------");
 
-function loginUserGreetings(userName) {
+function loginUserGreetings2(userName) {
   if (userName === undefined) {
     console.log("please enter a user name");
     return;
@@ -60,10 +60,43 @@ function loginUserGreetings(userName) {
   return `Welcome to our site dear ${userName} !`;
 }
 
-console.log(loginUserGreetings());
-console.log(loginUserGreetings("Harshil"));
+console.log(loginUserGreetings2());
+console.log(loginUserGreetings2("Harshil"));
 
 // if we pass by default value in parameters then it never goes into if block
-function loginUserGreetings(userName = "john") {
-    //code
+function loginUserGreetings3(userName = "john") {
+  //code
 }
+
+console.log("----------------------------------------------------------------");
+
+function calculateCartItems(...price) {
+  return price;
+}
+
+console.log(calculateCartItems(100, 3042, 22));
+
+console.log("----------------------------------------------------------------");
+
+const user1 = {
+  name: "John",
+  age: 30,
+};
+
+function getUserDetails(user) {
+  console.log(`username is ${user.name} and user age is ${user.age}`);
+}
+
+getUserDetails(user1);
+getUserDetails({
+  name: "David",
+  age: 25,
+});
+
+console.log("----------------------------------------------------------------");
+
+function handleArray(array) {
+  return array[3];
+}
+
+console.log(handleArray([123, 1444444444, "function", 234, "function"]));
