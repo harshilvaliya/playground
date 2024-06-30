@@ -35,3 +35,18 @@ if (true) {
   // console.log(universe);
 }
 //console.log(heroName);
+
+console.log("----------------------------------------------------------------");
+
+function addOne(num) {
+  return num + 1;
+}
+console.log(addOne(10)); //11
+
+console.log("----------------------------------------------------------------");
+
+const addTwo = function (num) {
+  return num + 2;
+};
+
+console.log(addTwo(10)); //12
