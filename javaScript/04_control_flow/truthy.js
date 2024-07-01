@@ -53,5 +53,3 @@ let chaiPrice = 100;
 chaiPrice >= 80
   ? console.log("it is very expensive")
   : console.log("it is affordable");
-
-console.log("----------------------------------------------------------------");
