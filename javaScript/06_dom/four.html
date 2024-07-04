@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DOM</title>
+    <style>
+      .bg-black {
+        background-color: #212121;
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="bg-black">
+    <ul class="dc-heroes">
+      <li class="hero">Batman</li>
+    </ul>
+  </body>
+  <script>
+    function addHero(heroName) {
+      const newHero = document.createElement("li");
+      newHero.innerHTML = heroName;
+      document.querySelector(".dc-heroes").appendChild(newHero);
+    }
+    addHero("Superman");
+    addHero("Flash");
+
+    function addHeroOpti(heroName) {
+      const newHero = document.createElement("li");
+      newHero.appendChild(document.createTextNode(heroName));
+      document.querySelector(".dc-heroes").appendChild(newHero);
+    }
+    addHeroOpti("Green Lantern");
+    addHeroOpti("Raven");
+
+    // edit li item
+    const selectHero = document.querySelector("li:nth-child(2)");
+    const newHeroName = document.createElement("li");
+    newHeroName.textContent = "Man of Steel";
+    selectHero.replaceWith(newHeroName);
+
+    //other way
+    const firstHero = document.querySelector("li:first-child");
+    firstHero.outerHTML = "<li>The Dark Knight</li>";
+
+    // remove elements
+    const lastHero = document.querySelector("li:last-child");
+    lastHero.remove();
+    // lastHero.parentNode.removeChild(lastHero);
+  </script>
+</html>
+
+<!--
+// other way /* const heroList = document.querySelector(".dc-heroes"); const
+newHero = document.createElement("li"); newHero.innerHTML = heroName;
+heroList.appendChild(newHero); */
+-->
