@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DOM</title>
+    <style>
+      .bg-black {
+        background-color: #212121;
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="bg-black"></body>
+  <script>
+    const div = document.createElement("div");
+    console.log(div);
+
+    div.className = "main";
+    div.id = Math.round(Math.random() * 10 + 1);
+    div.setAttribute("title", "justice");
+    div.style.color = "yellow";
+    div.style.fontSize = "64px";
+
+    // div.textContent = "Batman";
+    // div.innerHTML = "Batman";
+
+    const text = document.createTextNode("Batman");
+    div.appendChild(text);
+
+    document.body.appendChild(div);
+  </script>
+</html>
