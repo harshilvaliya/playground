@@ -5,7 +5,7 @@ const body = document.querySelector("body");
 buttons.forEach((button) => {
   button.addEventListener("click", (e) => {
     const color = e.target.id;
-    const validColors = ["grey", "white", "blue", "yellow", "red"];
+    const validColors = ["grey", "green", "blue", "yellow", "red"];
     if (validColors.includes(color)) {
       body.style.backgroundColor = color;
     }
