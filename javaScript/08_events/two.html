@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Timeouts</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
+      button {
+        margin: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+      }
+      #output {
+        margin-top: 20px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="mainHeading">JavaScript</h1>
+    <button id="stop">Stop Heading Change</button>
+    <div id="output"></div>
+
+    <script>
+      const mainHeading = document.getElementById("mainHeading");
+      const stopButton = document.getElementById("stop");
+      const output = document.getElementById("output");
+
+      const logMessage = (message) => {
+        console.log(message);
+        output.innerHTML += `${message}<br>`;
+      };
+
+      // Method 1 - direct declaration
+      setTimeout(() => {
+        logMessage("This message appeared after 1.5 seconds");
+      }, 1500);
+
+      // Method 2 - define function and pass the reference
+      const sayMyName = () => {
+        logMessage("I'm Batman.");
+      };
+      setTimeout(sayMyName, 2000);
+
+      // Change heading text
+      const changeText = () => {
+        mainHeading.textContent = "Learning JS";
+        logMessage("Heading changed to 'Learning JS'");
+      };
+
+      const changeTimeout = setTimeout(changeText, 2500);
+
+      stopButton.addEventListener("click", () => {
+        clearTimeout(changeTimeout);
+        logMessage("Heading change stopped");
+        stopButton.disabled = true;
+      });
+    </script>
+  </body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>JavaScript</h1>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    //method 1 - direct declration.
+    setTimeout(function () {
+      console.log("This message will appear after 1.5sec");
+    }, 1500);
+
+    //method 2 - define func and pass the referance.
+    const sayMyName = function () {
+      console.log("I'm Batman.");
+    };
+    setTimeout(sayMyName, 2000);
+
+    const changeText = function () {
+      document.querySelector("h1").innerHTML = "Learnig JS";
+    };
+
+    const change = setTimeout(changeText, 2000);
+
+    document.querySelector("#stop").addEventListener("click", function () {
+      clearTimeout(change);
+      console.log("change is stopped...");
+    });
+  </script>
+</html> -->

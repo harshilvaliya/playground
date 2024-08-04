@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Playground</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
+      button {
+        margin: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+      }
+      #dateDisplay,
+      #nameDisplay {
+        margin-top: 20px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JS Playground</h1>
+    <div>
+      <button id="start">Start</button>
+      <button id="stop">Stop</button>
+    </div>
+    <div id="dateDisplay"></div>
+    <div id="nameDisplay"></div>
+
+    <script>
+      let dateIntervalID;
+      let nameIntervalID;
+
+      const dateDisplay = document.getElementById("dateDisplay");
+      const nameDisplay = document.getElementById("nameDisplay");
+      const startButton = document.getElementById("start");
+      const stopButton = document.getElementById("stop");
+
+      const currentDate = () => {
+        dateDisplay.textContent = `Current date and time: ${new Date().toLocaleString()}`;
+      };
+
+      const nameArray = ["Hisenberg", "Vengence", "Maximus", "Driver"];
+      let nameIndex = 0;
+
+      const displayName = () => {
+        if (nameIndex < nameArray.length) {
+          nameDisplay.textContent = `I'm ${nameArray[nameIndex]}`;
+          console.log(`I'm ${nameArray[nameIndex]}`);
+          nameIndex++;
+        } else {
+          clearInterval(nameIntervalID);
+          nameIntervalID = null;
+        }
+      };
+
+      startButton.addEventListener("click", () => {
+        if (!dateIntervalID) {
+          dateIntervalID = setInterval(currentDate, 1000);
+          nameIntervalID = setInterval(displayName, 2500);
+          startButton.disabled = true;
+          stopButton.disabled = false;
+        }
+      });
+
+      stopButton.addEventListener("click", () => {
+        if (dateIntervalID) {
+          clearInterval(dateIntervalID);
+          dateIntervalID = null;
+        }
+        if (nameIntervalID) {
+          clearInterval(nameIntervalID);
+          nameIntervalID = null;
+        }
+        startButton.disabled = false;
+        stopButton.disabled = true;
+        nameIndex = 0; // Reset name index
+      });
+
+      // Initial calls
+      currentDate();
+      displayName();
+      stopButton.disabled = true;
+    </script>
+  </body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>JS Playground</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    let intervalID;
+
+    const currentDate = function (str) {
+      console.log(str, Date.now());
+    };
+
+    document.querySelector("#start").addEventListener("click", function () {
+      intervalID = setInterval(currentDate, 1000, "date: ");
+    });
+
+    document.querySelector("#stop").addEventListener("click", function () {
+      clearInterval(intervalID);
+    });
+  </script>
+</html> -->
