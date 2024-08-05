@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import Button from "./components/Button";
 
 function App() {
   const [counter, setCounter] = useState(0);
@@ -28,8 +29,8 @@ function App() {
       <h1>React Counter</h1>
       <h2>Current Value: {counter}</h2>
       <div className="button-group">
-        <button onClick={addValue}>Add Value</button>
-        <button onClick={removeValue}>Remove Value</button>
+        <Button btnText="Add" onClick={addValue} />
+        <Button btnText="Remove" onClick={removeValue} />
       </div>
       {message && <p className="limit-message">{message}</p>}
     </div>
