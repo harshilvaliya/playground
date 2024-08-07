@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="./news.css"?>
+<newspaper>
+  <header>Times of India</header>
+  <article>
+    <category>Youth Games 2024</category>
+    <headline>PM to Launch Khelo India Youth Games 2024</headline>
+    <lead>Khelo India Youth Games 2024</lead>
+    <body>
+      <p>Prime Minister Narendra Modi is all set to inaugurate the Khelo India Youth Games 2024 at the Jawaharlal Nehru Stadium in Chennai, kicking off a two-week-long sports spectacle from January 19 to 31. The event will host over 5,500 athletes across 26 sports.</p>
+      <p>To ensure security for PM Modi's arrival, Chennai is under a five-tier security cover, with a no-fly zone for drones and 22,000 personnel deployed. The opening ceremony will also witness the launch of Broadcasting sector projects worth ₹250 crore.</p>
+      <p>Athletes will compete in various disciplines, including Silambam, a traditional Tamil Nadu sport introduced as a demo for the first time.</p>
+    </body>
+    <notes>BE CAREFUL</notes>
+    <author>Harshil Valiya</author>
+    <editor>Peacemaker</editor>
+    <date>07-08-2024</date>
+  </article>
+</newspaper>
