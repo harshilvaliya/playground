@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub User Profile</title>
+    <style>
+      /* Add some basic styling to make the page look better */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
+
+      h2 {
+        margin-bottom: 20px;
+      }
+
+      .user-profile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .user-profile img {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        margin-bottom: 20px;
+      }
+
+      .user-profile h3 {
+        margin-bottom: 10px;
+      }
+
+      .user-profile p {
+        margin-bottom: 5px;
+      }
+
+      .user-profile a {
+        color: #007acc;
+        text-decoration: none;
+      }
+
+      .user-profile a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>GitHub User Profile</h2>
+    <div id="user-profile" class="user-profile">
+      <!-- User details will be populated here -->
+    </div>
+    <script>
+      const requestUrl = "https://api.github.com/users/harshilvaliya";
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", requestUrl);
+
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          const user = JSON.parse(xhr.responseText);
+          displayUserDetails(user);
+        }
+      };
+
+      xhr.send();
+
+      function displayUserDetails(user) {
+        const userProfile = document.getElementById("user-profile");
+
+        // Display user avatar
+        const userAvatar = document.createElement("img");
+        userAvatar.src = user.avatar_url;
+        userProfile.appendChild(userAvatar);
+
+        // Display user name
+        const userName = document.createElement("h3");
+        userName.textContent = user.name || "No Name Provided";
+        userProfile.appendChild(userName);
+
+        // Display user bio
+        const userBio = document.createElement("p");
+        userBio.textContent = user.bio || "No Bio Available";
+        userProfile.appendChild(userBio);
+
+        // Display user location
+        const userLocation = document.createElement("p");
+        userLocation.textContent = user.location || "No Location Provided";
+        userProfile.appendChild(userLocation);
+
+        // Display user profile link
+        const userLink = document.createElement("a");
+        userLink.href = user.html_url;
+        userLink.textContent = "View GitHub Profile";
+        userProfile.appendChild(userLink);
+      }
+    </script>
+  </body>
+</html>
