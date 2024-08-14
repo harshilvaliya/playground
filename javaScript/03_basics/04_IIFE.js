@@ -1,6 +1,7 @@
 // Immediately Invoked Function Expression (IIFE)
 
-(function greet() { //named iife
+(function greet() {
+  //named iife
   console.log("Learning about IIFE!");
 })();
 
@@ -10,6 +11,7 @@
 
 console.log("----------------------------------------------------------------");
 
-((name) => { //simple iife
+((name) => {
+  //simple iife
   console.log(`Hey ${name}`);
 })("harshil");
