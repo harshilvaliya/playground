@@ -81,3 +81,15 @@ async function consumePromiseFive() {
 }
 
 consumePromiseFive();
+
+fetch("https://api.github.com/users/harshilvaliya")
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.log(error);
+  })
+  .finally("finally");
