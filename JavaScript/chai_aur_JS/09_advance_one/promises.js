@@ -1,5 +1,6 @@
 console.log("start at 0th sec");
 
+//promise 1
 const promiseOne = new Promise(function (resolve, reject) {
   setTimeout(function () {
     resolve("async task is complete");
@@ -10,6 +11,7 @@ promiseOne.then(function () {
   console.log("Promise 1 consumed after 1 sec");
 });
 
+//promise 2
 new Promise((resolve, reject) => {
   setTimeout(() => {
     resolve("Promise 2 consumed");
@@ -18,6 +20,7 @@ new Promise((resolve, reject) => {
   console.log("Promise 2 consumed after 2 sec");
 });
 
+//promise 3
 const promiseThree = new Promise((resolve, reject) => {
   setTimeout(() => {
     console.log("Promise 3 consumed");
@@ -31,6 +34,7 @@ promiseThree.then((user) => {
   console.log(user.username);
 });
 
+//promise 4
 const promiseFour = new Promise((resolve, reject) => {
   setTimeout(() => {
     console.log("Promise 4 consumed");
@@ -59,6 +63,7 @@ promiseFour
     console.log("finally");
   });
 
+//promise 5
 const promiseFive = new Promise((resolve, reject) => {
   setTimeout(() => {
     console.log("Promise 5 consumed");
@@ -82,6 +87,7 @@ async function consumePromiseFive() {
 
 consumePromiseFive();
 
+//fetch [video 41 > chai aur js]
 fetch("https://api.github.com/users/harshilvaliya")
   .then((response) => {
     return response.json();
