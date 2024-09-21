@@ -24,6 +24,8 @@ function Actor(name, movies, isActing) {
 
 const actor1 = new Actor("Suriya", 43, true);
 const actor2 = new Actor("Dhanush", 50, true);
+const actor3 = new Actor("Rajanikanth", 170, true);
 
 console.log(actor1);
 console.log(actor2);
+console.log(actor3);
