@@ -15,3 +15,16 @@ console.log("----------------------------------------------------------------");
   //simple iife
   console.log(`Hey ${name}`);
 })("harshil");
+
+var ans = (function () {
+  var privateValue = 10;
+
+  return {
+    getter: function () {
+      return privateValue;
+    },
+    setter: function (value) {
+      privateValue = value;
+    },
+  };
+})();
